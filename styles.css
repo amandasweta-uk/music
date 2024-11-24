@@ -72,7 +72,7 @@ html {
   background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
   z-index: -1; /* Ensure the overlay is above the image */
 }
-overlay-text {
+.overlay-text {
   position: absolute;
   top: 80%;
   left: 50%;
