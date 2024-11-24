@@ -72,9 +72,9 @@ html {
   background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
   z-index: -1; /* Ensure the overlay is above the image */
 }
-.overlay-text {
+overlay-text {
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -87,7 +87,7 @@ html {
 
 .overlay-text2 {
   position: absolute;
-  top: 80%;
+  top: 84%;
   left: 50%;
     width: 100%;
   transform: translate(-50%, -50%);
@@ -98,6 +98,7 @@ html {
   text-align: center;
   z-index: 1;
 }
+
 
 header {
   width: 100%;
