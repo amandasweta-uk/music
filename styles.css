@@ -74,7 +74,7 @@ html {
 }
 overlay-text {
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -87,7 +87,7 @@ overlay-text {
 
 .overlay-text2 {
   position: absolute;
-  top: 84%;
+  top: 94%;
   left: 50%;
     width: 100%;
   transform: translate(-50%, -50%);
