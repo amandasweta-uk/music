@@ -76,8 +76,7 @@ header.scrolled .social-icons a {
   <div class="overlay-text2">
     <a href="#sounddesign">Sound Design</a> - 
     <a href="#compositions">Compositions</a> - 
-    <a href="#mixing">Editing/Mixing</a> - 
-    <a href="#other">Other</a>
+    <a href="#mixing">Editing/Mixing</a> 
 </div>
 
 </div>
@@ -89,64 +88,165 @@ header.scrolled .social-icons a {
 <h4>sound design</h4>
 <br><br><br><br><br><br>
 
-<section class="showreel animate2">
-   <div class="gallery">
-      <div class="gallery-item main-video-center">
-         <iframe width="700" height="650" src="https://www.youtube.com/embed/IQndMouZe5U" frameborder="0" allowfullscreen></iframe>
-         <div class="title">01: Thief Animation Resound</div>
-         <p class="p11">Sound design, foley, sfx</p>
-      </div>
-      <div class="gallery-item">
-         <iframe width="400" height="225" src="https://www.youtube.com/embed/OHB3NnYk0zE" frameborder="0" allowfullscreen></iframe>
-         <div class="title">02: Audio Implementation for FPP Shooter Game</div>
-         <p class="p11">Audio design, sfx, Recording foley, original score (Ableton Live, FMOD and Unity)</p>
-      </div>
-      <div class="gallery-item">
-         <iframe width="400" height="225" src="https://www.youtube.com/embed/CrDn1wEaicM" frameborder="0" allowfullscreen></iframe>
-         <div class="title">03: 3D Motion Design Resound</div>
-         <p class="p11">Sound design, foley, sfx, music editing, final mix</p>
-      </div>
-  
-<!--      <div class="gallery-item">
-         <iframe width="400" height="225" src="https://www.youtube.com/embed/X_0KWMF85oQ" frameborder="0" allowfullscreen></iframe>
-         <div class="title">05: (Insta) Clothing Brand Resound</div>
-         <p class="p11">Foley, original soundscape,final mix.</p>
-      </div>-->
-   </div>
-</section>
-
 <style>
-.gallery {
+
+       .videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px;
+    max-width: 800px;
+    
+    /* Centering */
+    margin: 0 auto;  /* Horizontally center */
+    justify-content: center; /* Center grid items */
+    }
+
+ .video-box {
+    width: 300px; /* Set a fixed width */
+    height: 169px; /* Maintain a perfect 16:9 ratio */
+    overflow: hidden; /* Prevents overflow */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centers the content horizontally */
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #000;
+     cursor: pointer;
 }
 
-.gallery-item {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers each item vertically and horizontally */
-}
-
-.gallery-item iframe {
+.video-box img {
     width: 100%;
-    max-width: 800px; /* Limit the width of the videos */
-    max-height: 550px;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box */
+    border-radius: 3px;
 }
 
-.main-video-center {
-   flex-basis: 100%;
-   display: flex;
-   justify-content: center;
-   margin-bottom: 30px;
+
+        .video-box:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+    position: relative;
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;  /* Set width relative to screen size */
+    max-width: 900px;  /* Limit max width */
+    aspect-ratio: 16 / 9;  /* Ensure rectangular 16:9 ratio */
 }
 
-.gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(4), .gallery-item:nth-child(5) {
-   flex: 1 1 48%; /* Makes sure the other videos are sized correctly */
+.popup iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
 }
-</style>
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+            background: red;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+        }
+    </style>
+ <br><br><br><br>
+   
+   
+<div class="videos">
+    <div class="video-box" onclick="openPopup('https://www.youtube.com/watch?v=CrDn1wEaicM')">
+        <img src="https://img.youtube.com/vi/CrDn1wEaicM/0.jpg" alt="Video 1">
+    </div>
+    <div class="video-box" onclick="openPopup('https://www.youtube.com/watch?v=IQndMouZe5U')">
+        <img src="https://img.youtube.com/vi/IQndMouZe5U/0.jpg" alt="Video 2">
+    </div>
+    <div class="video-box" onclick="openPopup('https://vimeo.com/953163791')">
+        <img src="https://i.vimeocdn.com/video/1734827639_640.jpg" alt="Video 3">
+    </div>
+    <div class="video-box" onclick="openPopup('https://vimeo.com/955213145')">
+        <img src="https://i.vimeocdn.com/video/1735832938_640.jpg" alt="Video 4">
+    </div>
+    <div class="video-box" onclick="openPopup('https://vimeo.com/954455426')">
+        <img src="https://i.vimeocdn.com/video/1735283912_640.jpg" alt="Video 5">
+    </div>
+    <div class="video-box" onclick="openPopup('https://vimeo.com/955504048')">
+        <img src="https://i.vimeocdn.com/video/1735964820_640.jpg" alt="Video 6">
+    </div>
+</div>
+
+    <!-- Popup Container -->
+<div class="popup" id="popup" onclick="closePopup(event)">
+    <div class="popup-content" onclick="event.stopPropagation();">
+        <iframe id="popup-video" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    function openPopup(videoUrl) {
+    let embedUrl = "";
+
+    // Convert YouTube or Vimeo URL to an embeddable format
+    if (videoUrl.includes("youtube.com/watch?v=")) {
+        let videoId = videoUrl.split("v=")[1].split("&")[0];
+        embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
+    } else if (videoUrl.includes("vimeo.com/")) {
+        let videoId = videoUrl.split("vimeo.com/")[1];
+        embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0`;
+    } else {
+        embedUrl = videoUrl;
+    }
+
+    document.getElementById("popup-video").src = embedUrl;
+    document.getElementById("popup").style.display = "flex";
+}
+
+
+    function closePopup(event) {
+        // Close only if clicked outside the video box
+        if (event.target.id === "popup") {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("popup-video").src = ""; // Stop video playback
+        }
+    }
+    
+    async function getVimeoThumbnail(vimeoId) {
+    let response = await fetch(`https://vimeo.com/api/v2/video/${vimeoId}.json`);
+    let data = await response.json();
+    return data[0].thumbnail_large; // Get the high-quality thumbnail
+}
+
+// Replace static images with dynamically fetched ones
+document.querySelectorAll('.video-box').forEach(async (box) => {
+    let videoUrl = box.getAttribute('onclick').match(/vimeo\.com\/(\d+)/);
+    if (videoUrl) {
+        let vimeoId = videoUrl[1];
+        let thumbnailUrl = await getVimeoThumbnail(vimeoId);
+        box.querySelector('img').src = thumbnailUrl;
+    }
+});
+
+</script>
 
 
 
@@ -159,6 +259,7 @@ header.scrolled .social-icons a {
 <!--  --------------------------compositions--------------------------------------->
 <div id="compositions"></div>
 <h4>Compositions</h4>
+ <br><br><br><br><br><br><br>
 <section class="showreel animate2" style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: auto; padding: 20px;">
     <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1984520676%3Fsecret_token%3Ds-QVEBU4ae78j&color=%235761ad&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/euphoriq-820485308" title="euphoriq" target="_blank" style="color: #cccccc; text-decoration: none;"></a> · <a href="https://soundcloud.com/euphoriq-820485308/sets/dark-ambient-compilation" title="soundscapes compilation" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
 </section>
@@ -169,50 +270,17 @@ header.scrolled .social-icons a {
  
  
 <!--  ----------------------------Mixing/Editing------------------------------------------>
-<div id="mixing"></div>
+<!--<div id="mixing"></div>
 <h4>mixing/editing</h4>
 <section class="showreel animate2" style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
     <iframe style="border: 0; width: 100%; max-width: 350px; height: 522px;" 
         src="https://bandcamp.com/EmbeddedPlayer/album=3378332918/size=large/bgcol=ffffff/linkcol=7137dc/transparent=true/" seamless>
         <a href="https://amandasweta.bandcamp.com/album/mixing-portfolio-1">Listen to my mixing portfolio on Bandcamp</a>
     </iframe>
-</section>
+</section>-->
 
 
 
-
- 
- 
- 
- 
- 
- 
- <!--------------------------------casual creates----------------------------------->
- 
- 
-<div id="other"></div>
-<h4>casual creates</h4>
-<section class="showreel animate3">
-    <br><br><br><br><br><br><br><br>
-    <div class="gallery">
-            <!-- Vimeo video iframe -->
-            <iframe src="https://player.vimeo.com/video/953163791" width="800" height="600" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            
-            <iframe src="https://player.vimeo.com/video/955213145" width="800" height="600" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            
-            <iframe src="https://player.vimeo.com/video/954455426" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            
-            <iframe src="https://player.vimeo.com/video/955504048" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            
-
-
-    </div>
-</section>
-
-
-
- 
- <br><br><br><br>
 
  
  
